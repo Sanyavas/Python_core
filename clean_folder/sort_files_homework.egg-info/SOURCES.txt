@@ -1,0 +1,6 @@
+setup.py
+sort_files_homework.egg-info/PKG-INFO
+sort_files_homework.egg-info/SOURCES.txt
+sort_files_homework.egg-info/dependency_links.txt
+sort_files_homework.egg-info/entry_points.txt
+sort_files_homework.egg-info/top_level.txt
