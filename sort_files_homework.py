@@ -26,7 +26,7 @@ file_extension = {"images": ['.jpeg', '.png', '.jpg', '.svg'],
 def normalize(name):
     cyrillic_symbols = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяєіїґ"
     translation = (
-        "a", "b", "v", "g", "d", "e", "e", "j", "z", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u",
+        "a", "b", "v", "g", "d", "e", "e", "j", "z", "y", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u",
         "f", "h", "ts", "ch", "sh", "sch", "", "y", "", "e", "yu", "ya", "je", "i", "ji", "g")
     trans = {}
 
@@ -130,18 +130,24 @@ def main(path_dir):
     print("Names all files in folder: ", dict_files)
     print("Count files: ", count_files)
 
-path = None
-try:
-    path = sys.argv[1]
-except IndexError:
-    print("No param")
+
+""" Function for <<<RUN>>> """
+
+
+def run():
+    p_dir = None
+    try:
+        p_dir = sys.argv[1]
+    except IndexError:
+        p_dir = input("Enter the path sort: ")
+        if not Path(p_dir).exists():
+            print(f"Not found the path: {p_dir}")
+        else:
+            main(p_dir)
+            print()
+
+            print("Sorted!")
+
 
 if __name__ == "__main__":
-    p_dir = input("Enter the path to sort: ")
-    if not Path(p_dir).exists():
-        print(f"Not found the path: {p_dir}")
-    else:
-        main(p_dir)
-        print()
-        print("Sorted!")
-
+    run()
