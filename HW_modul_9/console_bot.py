@@ -54,7 +54,8 @@ def handler_del(key):
 
 
 def handler_show():
-    print(f"All contacts: {DICT_CONTACTS}")
+    for key, val in DICT_CONTACTS.items():
+        print("|{:<15}|{:^15}|".format(key, val))
 
 
 def handler_else():
